@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: blue;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.5s;
+  right: 0;
+  left: 0;
+  top: 0;
+  transition: right 0.5s;
+  font-family: 'Raleway', sans-serif;
+}
+.top-area {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 0;
+  z-index: 500 !important;
+  
+}
+.burger-wrapper {
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr;
+}
+/*start search field*/
+
+.search-field{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+} 
+.search-box {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 45px;
+  background-color: white;
+  width: 45px;
+  margin-left: 5px;
+  transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.search-txt {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: calc(100% - 55px);
+  font-size: 16px;
+}
+#search-btn {
+  display: none;
+}
+.search-btn {
+  color: deepskyblue;
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 45px;
+}
+
+.search-field.active .search-box{
+  width: 100%;
+  height: 50px;
+  transition: width 0.5s cubic-bezier(0.68, -0.55, 0.65, 1.55);
+}
+.search-field.active .search-btn{
+  background: deepskyblue;
+  color: white ;
+  transition: color 0s linear 0.5s,background-color 0s linear 0.5s;
+} 
+@media (max-width : 575px ) {
+  
+  .search-field.active {
+    grid-column: 2 span;
+  } 
+  .search-field.active ~ .brands {
+    display: none;
+  }
+}
+
+/*end search field*/
